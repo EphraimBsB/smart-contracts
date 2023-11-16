@@ -51,24 +51,4 @@ contract EphraToken is ERC20Capped, ERC20Burnable {
         require(msg.sender == owner, "Only the owner can access this function");
         _;
     }
-
-    function transfer(address to, uint256 amount) public virtual override returns (bool) {
-        // Perform the transfer
-        bool success = super.transfer(to, amount);
-
-        // Emit the Transfer event
-        emit Transfer(msg.sender, to, amount);
-
-        return success;
-    }
-
-    function approve(address spender, uint256 amount) public virtual override returns (bool) {
-        // Perform the approval
-        bool success = super.approve(spender, amount);
-
-        // Emit the Approval event
-        emit Approval(msg.sender, spender, amount);
-
-        return success;
-    }
 }
