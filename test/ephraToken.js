@@ -87,6 +87,7 @@ describe("EphraToken contract", function() {
       const addr2Balance = await ephraToken.balanceOf(addr2.address);
       expect(addr2Balance).to.equal(50);
     });
+
   });
   
 });
